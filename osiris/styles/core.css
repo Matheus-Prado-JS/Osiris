@@ -791,46 +791,80 @@ box-shadow:
   gap: 20px;
 }
 
-.theme-card {
+.theme-preview {
 
-  padding: 35px;
+  background: transparent;
 
   border: none;
 
-  border-radius: 18px;
+  display: flex;
 
-  color: white;
+  flex-direction: column;
 
-  font-size: 18px;
+  align-items: center;
+
+  gap: 12px;
 
   cursor: pointer;
 
   transition: 0.3s ease;
 }
 
-.theme-card:hover {
+.theme-preview:hover {
 
-  transform: scale(1.03);
+  transform: translateY(-6px);
 }
 
-.cyan {
+.theme-image {
 
-  background: #00bcd4;
+  width:fit-content;
+
+  height: fit-content;
+
+  border-radius: 18px;
+
+  display: block;
+
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
 }
 
-.crimson {
+.theme-preview:hover .theme-image {
 
-  background: #ff3b3b;
+  box-shadow:
+    0 0 35px var(--primary-shadow-strong),
+    0 0 60px var(--primary-shadow);
 }
 
-.emerald {
+.theme-label {
 
-  background: #00c781;
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: #cbd5e1;
+
+  letter-spacing: 0.5px;
+
+  transition: 0.3s ease;
 }
 
-.gold {
+.theme-preview:hover .theme-label {
 
-  background: #d4a700;
+  color: white;
+}
+
+.active-theme .theme-image {
+
+  box-shadow:
+    0 0 40px var(--primary-shadow-max),
+    0 0 70px var(--primary-shadow-strong);
+}
+
+.active-theme .theme-label {
+
+  color: var(--primary-color);
 }
 
 .continue-button {

@@ -25,7 +25,10 @@ useEffect(() => {
 
   if (selectedTheme === "cyan") {
 
-    root.style.setProperty("--logo-filter", "invert(74%) sepia(90%) saturate(3000%) hue-rotate(130deg)");
+    root.style.setProperty(
+      "--logo-filter",
+      "brightness(0) saturate(100%) invert(91%) sepia(100%) saturate(7492%) hue-rotate(122deg) brightness(105%) contrast(101%)"
+    );
 
     root.style.setProperty(
       "--primary-color",
@@ -50,7 +53,10 @@ useEffect(() => {
 
   if (selectedTheme === "crimson") {
 
-    root.style.setProperty("--logo-filter", "invert(28%) sepia(98%) saturate(2500%) hue-rotate(340deg)");
+    root.style.setProperty(
+      "--logo-filter",
+      "brightness(0) saturate(100%) invert(33%) sepia(94%) saturate(7495%) hue-rotate(344deg) brightness(101%) contrast(101%)"
+    );
 
     root.style.setProperty(
       "--primary-color",
@@ -75,7 +81,10 @@ useEffect(() => {
 
   if (selectedTheme === "emerald") {
 
-    root.style.setProperty("--logo-filter", "invert(70%) sepia(60%) saturate(2500%) hue-rotate(110deg)");
+    root.style.setProperty(
+      "--logo-filter",
+      "brightness(0) saturate(100%) invert(72%) sepia(63%) saturate(748%) hue-rotate(103deg) brightness(101%) contrast(101%)"
+    );
 
     root.style.setProperty(
       "--primary-color",
@@ -100,7 +109,10 @@ useEffect(() => {
 
   if (selectedTheme === "gold") {
 
-    root.style.setProperty("--logo-filter", "invert(85%) sepia(60%) saturate(2000%) hue-rotate(5deg)");
+    root.style.setProperty(
+      "--logo-filter",
+      "brightness(0) saturate(100%) invert(84%) sepia(57%) saturate(749%) hue-rotate(359deg) brightness(102%) contrast(101%)"
+    );
 
     root.style.setProperty(
       "--primary-color",
@@ -187,49 +199,83 @@ useEffect(() => {
           Defina sua experiência visual
         </h2>
 
-        <div className="theme-grid">
+<div className="theme-grid">
 
-          <button
-            className="theme-card cyan"
+  <button
+    className={`theme-preview ${
+      selectedTheme === "cyan" ? "active-theme" : ""
+    }`}
+    onClick={() => setSelectedTheme("cyan")}
+  >
+<img
+  src="/cyan-layout.png"
+  alt="Cyan"
+  className="theme-image"
+/>
 
-            onClick={() =>
-              setSelectedTheme("cyan")
-            }
-          >
-            Cyan
-          </button>
+    <span className="theme-label">
+      Cyan
+    </span>
+  </button>
 
-          <button
-            className="theme-card crimson"
+  <button
+    className={`theme-preview ${
+      selectedTheme === "crimson" ? "active-theme" : ""
+    }`}
+    onClick={() => setSelectedTheme("crimson")}
+  >
+    <Image
+      src="/crimson-layout.png"
+      alt="Crimson"
+      width={260}
+      height={150}
+      className="theme-image"
+    />
 
-            onClick={() =>
-              setSelectedTheme("crimson")
-            }
-          >
-            Crimson
-          </button>
+    <span className="theme-label">
+      Crimson
+    </span>
+  </button>
 
-          <button
-            className="theme-card emerald"
+  <button
+    className={`theme-preview ${
+      selectedTheme === "emerald" ? "active-theme" : ""
+    }`}
+    onClick={() => setSelectedTheme("emerald")}
+  >
+    <Image
+      src="/emerald-layout.png"
+      alt="Emerald"
+      width={260}
+      height={150}
+      className="theme-image"
+    />
 
-            onClick={() =>
-              setSelectedTheme("emerald")
-            }
-          >
-            Emerald
-          </button>
+    <span className="theme-label">
+      Emerald
+    </span>
+  </button>
 
-          <button
-            className="theme-card gold"
+  <button
+    className={`theme-preview ${
+      selectedTheme === "gold" ? "active-theme" : ""
+    }`}
+    onClick={() => setSelectedTheme("gold")}
+  >
+    <Image
+      src="/gold-layout.png"
+      alt="Gold"
+      width={260}
+      height={150}
+      className="theme-image"
+    />
 
-            onClick={() =>
-              setSelectedTheme("gold")
-            }
-          >
-            Gold
-          </button>
+    <span className="theme-label">
+      Gold
+    </span>
+  </button>
 
-        </div>
+</div>
 
 {selectedTheme && (
 
