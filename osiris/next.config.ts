@@ -1,13 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
   output: "export",
-
-  basePath: "/osiris",
-
-  assetPrefix: "/osiris/",
-
+  trailingSlash: true,
 };
 
 export default nextConfig;
